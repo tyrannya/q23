@@ -1,0 +1,61 @@
+{
+  "name": "inverted-demo",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "$path": "src/client"
+      }
+    },
+    "StarterGui": {
+      "WatchUI": {
+        "$className": "ScreenGui",
+        "ResetOnSpawn": false,
+        "IgnoreGuiInset": true
+      }
+    },
+    "Workspace": {
+      "$properties": {
+        "StreamingEnabled": false
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Ambient": [0, 0, 0],
+        "OutdoorAmbient": [4, 8, 10],
+        "Brightness": 0.7,
+        "ClockTime": 0
+      },
+      "UnderwaterColorCorrection": {
+        "$className": "ColorCorrectionEffect",
+        "$properties": {
+          "Brightness": -0.08,
+          "Contrast": 0.18,
+          "Saturation": -0.35,
+          "TintColor": [142, 196, 194]
+        }
+      },
+      "ColdAtmosphere": {
+        "$className": "Atmosphere",
+        "$properties": {
+          "Density": 0.35,
+          "Offset": 0.25,
+          "Color": [120, 170, 175],
+          "Decay": [20, 35, 40],
+          "Glare": 0,
+          "Haze": 1.6
+        }
+      }
+    }
+  }
+}
