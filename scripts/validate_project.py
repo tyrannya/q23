@@ -36,6 +36,19 @@ def assert_color3_unit_interval(value: object, label: str) -> None:
         assert 0 <= component <= 1, f"{label} component {component!r} must be in Rojo Color3 0..1 range"
 
 
+
+def validate_project_colors(node: object, path: str = "tree") -> None:
+    if isinstance(node, dict):
+        props = node.get("$properties")
+        if isinstance(props, dict) and "Color" in props:
+            assert_color3_unit_interval(props["Color"], f"{path}.$properties.Color")
+
+        for key, value in node.items():
+            validate_project_colors(value, f"{path}.{key}")
+    elif isinstance(node, list):
+        for index, value in enumerate(node):
+            validate_project_colors(value, f"{path}[{index}]")
+
 def validate_default_project() -> None:
     project_path = ROOT / "default.project.json"
     project = json.loads(read_text(project_path))
@@ -62,6 +75,24 @@ def validate_default_project() -> None:
     )
     assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Color"], "ColdAtmosphere.Color")
     assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Decay"], "ColdAtmosphere.Decay")
+
+    workspace = tree["Workspace"]
+    assert "Ship" in workspace, "Workspace must include a static Ship map visible in Studio edit mode"
+    assert "Checkpoints" in workspace, "Workspace must include static Checkpoints"
+    assert "MonsterWaypoints" in workspace, "Workspace must include static MonsterWaypoints"
+    assert "InvertedDemoSpawn" in workspace, "Workspace must include a static spawn"
+    ship = workspace["Ship"]
+    for required_part in (
+        "Corridor_01_Floor_InvertedCeiling",
+        "Room_A_Floor",
+        "AirPocket_01",
+        "Room_B_Floor",
+        "MaintenanceNiche_Floor",
+        "EmergencyHatch_Exit",
+    ):
+        assert required_part in ship, f"Workspace.Ship missing {required_part}"
+
+    validate_project_colors(tree)
 
 
 def validate_required_files() -> None:

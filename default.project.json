@@ -29,6 +29,1800 @@
     "Workspace": {
       "$properties": {
         "StreamingEnabled": false
+      },
+      "Ship": {
+        "$className": "Folder",
+        "Corridor_01_Floor_InvertedCeiling": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              0,
+              0
+            ],
+            "Size": [
+              14,
+              1,
+              90
+            ],
+            "Color": [
+              0.07058823529411765,
+              0.10980392156862745,
+              0.11764705882352941
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Corridor_01_LeftWall": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -7,
+              5,
+              0
+            ],
+            "Size": [
+              1,
+              10,
+              90
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Corridor_01_RightWall": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              7,
+              5,
+              0
+            ],
+            "Size": [
+              1,
+              10,
+              90
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Corridor_01_Ceiling_FormerFloor": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              10,
+              0
+            ],
+            "Size": [
+              14,
+              1,
+              90
+            ],
+            "Color": [
+              0.09411764705882353,
+              0.1411764705882353,
+              0.14901960784313725
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Corridor_EndBulkhead": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              5,
+              45
+            ],
+            "Size": [
+              14,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              -35
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              -35
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              -35
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              -23
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              -23
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              -23
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              -11
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              -11
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              -11
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              1
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              1
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              1
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              13
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              13
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              13
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Left_6": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -6.3,
+              5,
+              25
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Rib_Right_6": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              6.3,
+              5,
+              25
+            ],
+            "Size": [
+              0.7,
+              10,
+              0.9
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "OverheadPipe_OnFloor_6": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -2.4,
+              0.65,
+              25
+            ],
+            "Size": [
+              0.5,
+              0.5,
+              8
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_Floor": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              0,
+              -8
+            ],
+            "Size": [
+              24,
+              1,
+              24
+            ],
+            "Color": [
+              0.07058823529411765,
+              0.10980392156862745,
+              0.11764705882352941
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_BackWall": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -32,
+              5,
+              -8
+            ],
+            "Size": [
+              1,
+              10,
+              24
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_SideWall_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              5,
+              -20
+            ],
+            "Size": [
+              24,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_SideWall_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              5,
+              4
+            ],
+            "Size": [
+              24,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_Ceiling": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              10,
+              -8
+            ],
+            "Size": [
+              24,
+              1,
+              24
+            ],
+            "Color": [
+              0.09411764705882353,
+              0.1411764705882353,
+              0.14901960784313725
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_DoorLip": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -8.5,
+              5,
+              -8
+            ],
+            "Size": [
+              2,
+              10,
+              4
+            ],
+            "Color": [
+              0.43137254901960786,
+              0.0784313725490196,
+              0.07058823529411765
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "AirPocket_01": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              3.2,
+              -8
+            ],
+            "Size": [
+              20,
+              6,
+              20
+            ],
+            "Color": [
+              0.3215686274509804,
+              0.7058823529411765,
+              0.7647058823529411
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.78
+          }
+        },
+        "AirPocket_Surface_Glimmer": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              6.4,
+              -8
+            ],
+            "Size": [
+              19,
+              0.25,
+              19
+            ],
+            "Color": [
+              0.47058823529411764,
+              0.8235294117647058,
+              0.8627450980392157
+            ],
+            "Material": "Neon",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.35
+          }
+        },
+        "Room_A_OverturnedLabTable_A": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -22,
+              1.2,
+              -14
+            ],
+            "Size": [
+              8,
+              1.4,
+              2.8
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_OverturnedLabTable_B": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -15,
+              1.2,
+              -1
+            ],
+            "Size": [
+              7,
+              1.4,
+              2.5
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_FallenShelf": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -29,
+              1.3,
+              -2
+            ],
+            "Size": [
+              9,
+              1,
+              2.2
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_A_AirVent_Glow": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -12.2,
+              5.4,
+              -8
+            ],
+            "Size": [
+              0.4,
+              2.6,
+              5
+            ],
+            "Color": [
+              0.37254901960784315,
+              0.9019607843137255,
+              0.8627450980392157
+            ],
+            "Material": "Neon",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.2
+          }
+        },
+        "Room_A_BrokenSpecimenTank_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -29.6,
+              3.1,
+              -16
+            ],
+            "Size": [
+              1.2,
+              4.2,
+              2.2
+            ],
+            "Color": [
+              0.29411764705882354,
+              0.5686274509803921,
+              0.5882352941176471
+            ],
+            "Material": "Glass",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true,
+            "Transparency": 0.35
+          }
+        },
+        "Room_A_BrokenSpecimenTank_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -29.6,
+              3.1,
+              -10
+            ],
+            "Size": [
+              1.2,
+              4.2,
+              2.2
+            ],
+            "Color": [
+              0.29411764705882354,
+              0.5686274509803921,
+              0.5882352941176471
+            ],
+            "Material": "Glass",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true,
+            "Transparency": 0.35
+          }
+        },
+        "Room_A_BrokenSpecimenTank_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -29.6,
+              3.1,
+              -4
+            ],
+            "Size": [
+              1.2,
+              4.2,
+              2.2
+            ],
+            "Color": [
+              0.29411764705882354,
+              0.5686274509803921,
+              0.5882352941176471
+            ],
+            "Material": "Glass",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true,
+            "Transparency": 0.35
+          }
+        },
+        "Room_B_Floor": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              0,
+              22
+            ],
+            "Size": [
+              24,
+              1,
+              24
+            ],
+            "Color": [
+              0.07058823529411765,
+              0.10980392156862745,
+              0.11764705882352941
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_BackWall": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              32,
+              5,
+              22
+            ],
+            "Size": [
+              1,
+              10,
+              24
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_SideWall_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              5,
+              10
+            ],
+            "Size": [
+              24,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_SideWall_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              5,
+              34
+            ],
+            "Size": [
+              24,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_Ceiling": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              10,
+              22
+            ],
+            "Size": [
+              24,
+              1,
+              24
+            ],
+            "Color": [
+              0.09411764705882353,
+              0.1411764705882353,
+              0.14901960784313725
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_DoorLip": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              8.5,
+              5,
+              22
+            ],
+            "Size": [
+              2,
+              10,
+              4
+            ],
+            "Color": [
+              0.43137254901960786,
+              0.0784313725490196,
+              0.07058823529411765
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_CentralNoiseTrap_Grate": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              0.58,
+              22
+            ],
+            "Size": [
+              7,
+              0.18,
+              7
+            ],
+            "Color": [
+              0.3137254901960784,
+              0.33725490196078434,
+              0.3058823529411765
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_CollapsedLocker_Left": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              14,
+              2.2,
+              22
+            ],
+            "Size": [
+              2.2,
+              4.2,
+              1.2
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_CollapsedLocker_Right": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              26,
+              2.2,
+              22
+            ],
+            "Size": [
+              2.2,
+              4.2,
+              1.2
+            ],
+            "Color": [
+              0.3764705882352941,
+              0.20392156862745098,
+              0.12549019607843137
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_FlickerLight_Red": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              8.8,
+              22
+            ],
+            "Size": [
+              1.4,
+              0.35,
+              1.4
+            ],
+            "Color": [
+              0.7450980392156863,
+              0.11764705882352941,
+              0.09411764705882353
+            ],
+            "Material": "Neon",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_OverturnedBunk_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              13.5,
+              1.4,
+              15
+            ],
+            "Size": [
+              6,
+              1.4,
+              2.2
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_Mattress_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              13.5,
+              2.2,
+              15
+            ],
+            "Size": [
+              5.6,
+              0.45,
+              2
+            ],
+            "Color": [
+              0.10980392156862745,
+              0.17647058823529413,
+              0.17647058823529413
+            ],
+            "Material": "Fabric",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_OverturnedBunk_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              26.5,
+              1.4,
+              15
+            ],
+            "Size": [
+              6,
+              1.4,
+              2.2
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_Mattress_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              26.5,
+              2.2,
+              15
+            ],
+            "Size": [
+              5.6,
+              0.45,
+              2
+            ],
+            "Color": [
+              0.10980392156862745,
+              0.17647058823529413,
+              0.17647058823529413
+            ],
+            "Material": "Fabric",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_OverturnedBunk_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              13.5,
+              1.4,
+              29
+            ],
+            "Size": [
+              6,
+              1.4,
+              2.2
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_Mattress_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              13.5,
+              2.2,
+              29
+            ],
+            "Size": [
+              5.6,
+              0.45,
+              2
+            ],
+            "Color": [
+              0.10980392156862745,
+              0.17647058823529413,
+              0.17647058823529413
+            ],
+            "Material": "Fabric",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_OverturnedBunk_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              26.5,
+              1.4,
+              29
+            ],
+            "Size": [
+              6,
+              1.4,
+              2.2
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "Room_B_Mattress_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              26.5,
+              2.2,
+              29
+            ],
+            "Size": [
+              5.6,
+              0.45,
+              2
+            ],
+            "Color": [
+              0.10980392156862745,
+              0.17647058823529413,
+              0.17647058823529413
+            ],
+            "Material": "Fabric",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "MaintenanceNiche_Floor": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              0,
+              57
+            ],
+            "Size": [
+              10,
+              1,
+              18
+            ],
+            "Color": [
+              0.07058823529411765,
+              0.10980392156862745,
+              0.11764705882352941
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "MaintenanceNiche_Back": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              5,
+              66
+            ],
+            "Size": [
+              10,
+              10,
+              1
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "MaintenanceNiche_Left": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -5,
+              5,
+              57
+            ],
+            "Size": [
+              1,
+              10,
+              18
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "MaintenanceNiche_Right": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              5,
+              5,
+              57
+            ],
+            "Size": [
+              1,
+              10,
+              18
+            ],
+            "Color": [
+              0.14901960784313725,
+              0.21176470588235294,
+              0.21568627450980393
+            ],
+            "Material": "Metal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        },
+        "EmergencyHatch_Exit": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              3,
+              63
+            ],
+            "Size": [
+              7,
+              5,
+              2
+            ],
+            "Color": [
+              0.9411764705882353,
+              0.7450980392156863,
+              0.3137254901960784
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.45
+          }
+        },
+        "EmergencyHatch_Frame": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              3,
+              64.1
+            ],
+            "Size": [
+              8,
+              6,
+              0.5
+            ],
+            "Color": [
+              0.43137254901960786,
+              0.0784313725490196,
+              0.07058823529411765
+            ],
+            "Material": "CorrodedMetal",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": true
+          }
+        }
+      },
+      "Checkpoints": {
+        "$className": "Folder",
+        "Checkpoint_01_Start": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              2,
+              -38
+            ],
+            "Size": [
+              7,
+              4,
+              7
+            ],
+            "Color": [
+              0.3137254901960784,
+              1.0,
+              0.6666666666666666
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.85
+          }
+        },
+        "Checkpoint_02_AirPocket": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -14,
+              2,
+              -8
+            ],
+            "Size": [
+              7,
+              4,
+              7
+            ],
+            "Color": [
+              0.3137254901960784,
+              1.0,
+              0.6666666666666666
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.85
+          }
+        },
+        "Checkpoint_03_Niche": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              2,
+              52
+            ],
+            "Size": [
+              7,
+              4,
+              7
+            ],
+            "Color": [
+              0.3137254901960784,
+              1.0,
+              0.6666666666666666
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.85
+          }
+        }
+      },
+      "MonsterWaypoints": {
+        "$className": "Folder",
+        "Waypoint_1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              1,
+              34
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ],
+            "Color": [
+              1.0,
+              0.35294117647058826,
+              0.35294117647058826
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.9
+          }
+        },
+        "Waypoint_2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              20,
+              1,
+              22
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ],
+            "Color": [
+              1.0,
+              0.35294117647058826,
+              0.35294117647058826
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.9
+          }
+        },
+        "Waypoint_3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              1,
+              6
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ],
+            "Color": [
+              1.0,
+              0.35294117647058826,
+              0.35294117647058826
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.9
+          }
+        },
+        "Waypoint_4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              -20,
+              1,
+              -8
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ],
+            "Color": [
+              1.0,
+              0.35294117647058826,
+              0.35294117647058826
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.9
+          }
+        },
+        "Waypoint_5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Position": [
+              0,
+              1,
+              -30
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ],
+            "Color": [
+              1.0,
+              0.35294117647058826,
+              0.35294117647058826
+            ],
+            "Material": "ForceField",
+            "TopSurface": "Smooth",
+            "BottomSurface": "Smooth",
+            "CanCollide": false,
+            "Transparency": 0.9
+          }
+        }
+      },
+      "InvertedDemoSpawn": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Position": [
+            0,
+            1.2,
+            -40
+          ],
+          "Size": [
+            6,
+            1,
+            6
+          ],
+          "Transparency": 0.75,
+          "CanCollide": false,
+          "Neutral": true,
+          "Duration": 0
+        }
       }
     },
     "Lighting": {

@@ -27,11 +27,15 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
    ```
 
 4. Connect the Studio plugin to the Rojo server.
-5. Press **Play**. `LevelBuilder.server.luau` will create a minimal playable greybox scene unless you already created your own `Workspace/Ship` or `Workspace/Monster`.
+5. After Rojo sync, the small map is visible immediately in `Workspace/Ship` even before Play. Press **Play** to let `LevelBuilder.server.luau` attach gameplay tags/lights and create the placeholder monster if needed.
+
+## Static map in Edit mode
+
+The PR now includes a real small map in `default.project.json`, not only a runtime script. After connecting Rojo, Studio should show `Workspace/Ship` with the corridor, Room A bio-lab/air pocket, Room B stealth bunk room, maintenance niche, and emergency hatch. Runtime scripts still add gameplay tags, lights, and fallback objects when you press **Play**.
 
 ## Studio scene requirements
 
-The generated scene is enough for a first playtest. If you replace it with hand-built content, keep these names/contracts:
+The static Rojo scene plus runtime builder are enough for a first playtest. If you replace it with hand-built content, keep these names/contracts:
 
 - `Workspace/Ship` contains the playable corridor/rooms.
 - `Workspace/Ship/EmergencyHatch_Exit` or another exit part has boolean attribute `IsDemoExit = true`.

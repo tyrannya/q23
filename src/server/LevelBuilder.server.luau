@@ -166,6 +166,41 @@ local function buildCorridor(ship: Folder)
 	buildStealthBunkRoom(ship, metal, darkMetal, rust)
 end
 
+local function ensureExistingMapGameplay(ship: Folder)
+	local airPocket = ship:FindFirstChild("AirPocket_01", true)
+	if airPocket and airPocket:IsA("BasePart") then
+		airPocket:SetAttribute(Config.CO2.AirPocketAttribute, true)
+		CollectionService:AddTag(airPocket, Config.CO2.AirPocketTag)
+		airPocket.CanCollide = false
+		airPocket.CanQuery = true
+		airPocket.CanTouch = true
+	end
+
+	local exit = ship:FindFirstChild("EmergencyHatch_Exit", true)
+	if exit and exit:IsA("BasePart") then
+		exit:SetAttribute(Config.Objective.ExitAttribute, true)
+		exit.CanCollide = false
+		exit.CanQuery = true
+		exit.CanTouch = true
+	end
+
+	local glimmer = ship:FindFirstChild("AirPocket_Surface_Glimmer", true)
+	if glimmer and glimmer:IsA("BasePart") and not glimmer:FindFirstChildOfClass("PointLight") then
+		addPointLight(glimmer, Color3.fromRGB(105, 230, 225), 0.7, 22)
+	end
+
+	local redLight = ship:FindFirstChild("Room_B_FlickerLight_Red", true)
+	if redLight and redLight:IsA("BasePart") and not redLight:FindFirstChildOfClass("PointLight") then
+		addPointLight(redLight, Color3.fromRGB(190, 35, 28), 0.65, 18)
+	end
+
+	for _, instance in ship:GetDescendants() do
+		if instance:IsA("BasePart") and instance.Name:match("^Room_B_OverturnedBunk_") then
+			instance:SetAttribute("StealthCover", true)
+		end
+	end
+end
+
 local function buildCheckpoints()
 	local folder = Workspace:FindFirstChild(CHECKPOINT_FOLDER_NAME)
 	if not folder then
@@ -285,11 +320,14 @@ end
 local function buildDemoScene()
 	applyLighting()
 
-	if not Workspace:FindFirstChild(SHIP_FOLDER_NAME) then
-		local ship = Instance.new("Folder")
+	local ship = Workspace:FindFirstChild(SHIP_FOLDER_NAME)
+	if not ship then
+		ship = Instance.new("Folder")
 		ship.Name = SHIP_FOLDER_NAME
 		ship.Parent = Workspace
 		buildCorridor(ship)
+	elseif ship:IsA("Folder") then
+		ensureExistingMapGameplay(ship)
 	end
 
 	buildSpawn()
