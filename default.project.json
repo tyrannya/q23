@@ -20,8 +20,10 @@
     "StarterGui": {
       "WatchUI": {
         "$className": "ScreenGui",
-        "ResetOnSpawn": false,
-        "IgnoreGuiInset": true
+        "$properties": {
+          "ResetOnSpawn": false,
+          "IgnoreGuiInset": true
+        }
       }
     },
     "Workspace": {
