@@ -14,7 +14,6 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
 - Checkpoint respawn service.
 - Blind monster state machine driven by noise and proximity, not vision.
 - Runtime greybox builder that creates the demo corridor, a dressed bio-lab air-pocket room, a stealth bunk room with cover, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
-- Runtime greybox builder that creates the demo corridor, two rooms, air pocket, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
 - Objective flow and minimal objective UI so the demo has a start-to-finish path: find air, reach the niche, open the hatch.
 
 ## Rojo setup
@@ -74,3 +73,15 @@ python3 scripts/validate_project.py
 ```
 
 This validates `default.project.json`, required Rojo paths, unresolved conflict markers, and basic Luau delimiter sanity.
+
+## Troubleshooting
+
+### White screen / overbright scene
+
+If Studio opens into a white or washed-out view, re-sync this branch and validate `default.project.json`:
+
+```bash
+python3 scripts/validate_project.py
+```
+
+Rojo `Color3` arrays in `default.project.json` must stay in the `0..1` range. Do not paste Roblox `Color3.fromRGB(0..255)` values directly into the project JSON; use normalized values instead.

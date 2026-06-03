@@ -274,6 +274,7 @@ end
 local function applyLighting()
 	Lighting.Brightness = 0.7
 	Lighting.ClockTime = 0
+	Lighting.ExposureCompensation = -0.45
 	Lighting.Ambient = Color3.fromRGB(0, 0, 0)
 	Lighting.OutdoorAmbient = Color3.fromRGB(4, 8, 10)
 	pcall(function()

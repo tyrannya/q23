@@ -29,6 +29,13 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def assert_color3_unit_interval(value: object, label: str) -> None:
+    assert isinstance(value, list) and len(value) == 3, f"{label} must be a 3-number Color3 array"
+    for component in value:
+        assert isinstance(component, (int, float)), f"{label} contains a non-number component"
+        assert 0 <= component <= 1, f"{label} component {component!r} must be in Rojo Color3 0..1 range"
+
+
 def validate_default_project() -> None:
     project_path = ROOT / "default.project.json"
     project = json.loads(read_text(project_path))
@@ -44,6 +51,17 @@ def validate_default_project() -> None:
     assert watch_ui["$className"] == "ScreenGui"
     assert watch_ui["$properties"]["ResetOnSpawn"] is False
     assert watch_ui["$properties"]["IgnoreGuiInset"] is True
+
+    lighting = tree["Lighting"]
+    lighting_props = lighting["$properties"]
+    assert_color3_unit_interval(lighting_props["Ambient"], "Lighting.Ambient")
+    assert_color3_unit_interval(lighting_props["OutdoorAmbient"], "Lighting.OutdoorAmbient")
+    assert_color3_unit_interval(
+        lighting["UnderwaterColorCorrection"]["$properties"]["TintColor"],
+        "UnderwaterColorCorrection.TintColor",
+    )
+    assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Color"], "ColdAtmosphere.Color")
+    assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Decay"], "ColdAtmosphere.Decay")
 
 
 def validate_required_files() -> None:
