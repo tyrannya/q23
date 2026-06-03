@@ -14,6 +14,7 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
 - Checkpoint respawn service.
 - Blind monster state machine driven by noise and proximity, not vision.
 - Runtime greybox builder that creates the demo corridor, a dressed bio-lab air-pocket room, a stealth bunk room with cover, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
+- Runtime greybox builder that creates the demo corridor, two rooms, air pocket, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
 - Objective flow and minimal objective UI so the demo has a start-to-finish path: find air, reach the niche, open the hatch.
 
 ## Rojo setup
