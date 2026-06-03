@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+"""Lightweight repository validation for the INVERTED Rojo demo.
+
+The script intentionally avoids Roblox-specific execution. It checks the parts
+that can be validated in CI or a bare container: JSON syntax, required project
+paths, unresolved merge conflict markers, and basic Luau delimiter balance.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+CONFLICT_MARKERS = ("<" * 7, "=" * 7, ">" * 7)
+REQUIRED_FILES = (
+    "default.project.json",
+    "README.md",
+    "src/shared/Config.luau",
+    "src/shared/Signals.luau",
+    "src/client/MovementController.client.luau",
+    "src/client/ObjectiveUI.client.luau",
+    "src/server/LevelBuilder.server.luau",
+    "src/server/ObjectiveService.server.luau",
+)
+
+
+def read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def assert_color3_unit_interval(value: object, label: str) -> None:
+    assert isinstance(value, list) and len(value) == 3, f"{label} must be a 3-number Color3 array"
+    for component in value:
+        assert isinstance(component, (int, float)), f"{label} contains a non-number component"
+        assert 0 <= component <= 1, f"{label} component {component!r} must be in Rojo Color3 0..1 range"
+
+
+
+def validate_project_colors(node: object, path: str = "tree") -> None:
+    if isinstance(node, dict):
+        props = node.get("$properties")
+        if isinstance(props, dict) and "Color" in props:
+            assert_color3_unit_interval(props["Color"], f"{path}.$properties.Color")
+
+        for key, value in node.items():
+            validate_project_colors(value, f"{path}.{key}")
+    elif isinstance(node, list):
+        for index, value in enumerate(node):
+            validate_project_colors(value, f"{path}[{index}]")
+
+def validate_default_project() -> None:
+    project_path = ROOT / "default.project.json"
+    project = json.loads(read_text(project_path))
+
+    tree = project.get("tree", {})
+    assert project.get("name") == "inverted-demo", "Unexpected Rojo project name"
+    assert tree.get("$className") == "DataModel", "Rojo tree must map to DataModel"
+    assert tree["ReplicatedStorage"]["Shared"]["$path"] == "src/shared"
+    assert tree["ServerScriptService"]["Server"]["$path"] == "src/server"
+    assert tree["StarterPlayer"]["StarterPlayerScripts"]["$path"] == "src/client"
+
+    watch_ui = tree["StarterGui"]["WatchUI"]
+    assert watch_ui["$className"] == "ScreenGui"
+    assert watch_ui["$properties"]["ResetOnSpawn"] is False
+    assert watch_ui["$properties"]["IgnoreGuiInset"] is True
+
+    lighting = tree["Lighting"]
+    lighting_props = lighting["$properties"]
+    assert_color3_unit_interval(lighting_props["Ambient"], "Lighting.Ambient")
+    assert_color3_unit_interval(lighting_props["OutdoorAmbient"], "Lighting.OutdoorAmbient")
+    assert_color3_unit_interval(
+        lighting["UnderwaterColorCorrection"]["$properties"]["TintColor"],
+        "UnderwaterColorCorrection.TintColor",
+    )
+    assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Color"], "ColdAtmosphere.Color")
+    assert_color3_unit_interval(lighting["ColdAtmosphere"]["$properties"]["Decay"], "ColdAtmosphere.Decay")
+
+    workspace = tree["Workspace"]
+    assert "Ship" in workspace, "Workspace must include a static Ship map visible in Studio edit mode"
+    assert "Checkpoints" in workspace, "Workspace must include static Checkpoints"
+    assert "MonsterWaypoints" in workspace, "Workspace must include static MonsterWaypoints"
+    assert "InvertedDemoSpawn" in workspace, "Workspace must include a static spawn"
+    ship = workspace["Ship"]
+    for required_part in (
+        "Corridor_01_Floor_InvertedCeiling",
+        "Room_A_Floor",
+        "AirPocket_01",
+        "Room_B_Floor",
+        "MaintenanceNiche_Floor",
+        "EmergencyHatch_Exit",
+    ):
+        assert required_part in ship, f"Workspace.Ship missing {required_part}"
+
+    validate_project_colors(tree)
+
+
+def validate_required_files() -> None:
+    missing = [relative for relative in REQUIRED_FILES if not (ROOT / relative).is_file()]
+    assert not missing, f"Missing required files: {missing}"
+
+
+def validate_no_conflict_markers() -> None:
+    checked_suffixes = {".json", ".md", ".luau", ".py"}
+    for path in ROOT.rglob("*"):
+        if ".git" in path.parts or not path.is_file() or path.suffix not in checked_suffixes:
+            continue
+
+        text = read_text(path)
+        for marker in CONFLICT_MARKERS:
+            assert marker not in text, f"Unresolved merge conflict marker {marker!r} in {path.relative_to(ROOT)}"
+
+
+def validate_luau_delimiters() -> None:
+    for path in (ROOT / "src").rglob("*.luau"):
+        text = read_text(path)
+        assert text.count("(") >= text.count(")"), f"Suspicious parenthesis balance in {path.relative_to(ROOT)}"
+        assert text.count("{") >= text.count("}"), f"Suspicious brace balance in {path.relative_to(ROOT)}"
+
+
+def main() -> None:
+    validate_required_files()
+    validate_default_project()
+    validate_no_conflict_markers()
+    validate_luau_delimiters()
+    print("INVERTED project validation passed")
+
+
+if __name__ == "__main__":
+    main()
