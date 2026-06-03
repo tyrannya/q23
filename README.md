@@ -58,3 +58,13 @@ The Rojo project config and runtime builder set a dark baseline with cold color 
 2. Reach `AirPocket_01` in Room A to vent CO₂.
 3. Move quietly toward the maintenance niche while the monster patrols/reacts to noise.
 4. Touch the emergency hatch exit to complete the demo slice.
+
+## Validation
+
+Run the lightweight repository checks before updating a PR or resolving merge conflicts:
+
+```bash
+python3 scripts/validate_project.py
+```
+
+This validates `default.project.json`, required Rojo paths, unresolved conflict markers, and basic Luau delimiter sanity.
