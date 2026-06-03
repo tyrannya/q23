@@ -13,6 +13,7 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
 - Client breathing effects and watch UI.
 - Checkpoint respawn service.
 - Blind monster state machine driven by noise and proximity, not vision.
+- Runtime greybox builder that creates the demo corridor, a dressed bio-lab air-pocket room, a stealth bunk room with cover, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
 - Runtime greybox builder that creates the demo corridor, two rooms, air pocket, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
 - Objective flow and minimal objective UI so the demo has a start-to-finish path: find air, reach the niche, open the hatch.
 
@@ -40,6 +41,11 @@ The generated scene is enough for a first playtest. If you replace it with hand-
 - `Workspace/Checkpoints` contains invisible checkpoint parts; optional `Order` attributes are available for designers.
 - Air pocket parts use CollectionService tag `AirPocket` or boolean attribute `IsAirPocket = true`.
 
+## Generated rooms
+
+- **Room A — Atlas Bio-Lab / Air:** specimen tanks, fallen shelves, lab tables, floating debris, cyan vent glow, and the active `AirPocket_01` CO₂ recovery zone.
+- **Room B — Crew Berth / Quiet:** overturned bunks, mattresses, lockers, a central grate/noise-trap landmark, and red emergency light for the stealth encounter.
+
 ## Recommended lighting
 
 The Rojo project config and runtime builder set a dark baseline with cold color correction and atmosphere. Use `Lighting.Technology = Future` for stronger shadows and flashlight mood.
@@ -55,8 +61,8 @@ The Rojo project config and runtime builder set a dark baseline with cold color 
 ## Current demo route
 
 1. Start in the inverted corridor.
-2. Reach `AirPocket_01` in Room A to vent CO₂.
-3. Move quietly toward the maintenance niche while the monster patrols/reacts to noise.
+2. Reach the dressed Room A bio-lab and its `AirPocket_01` vent zone to lower CO₂.
+3. Cross Room B, using overturned bunks/lockers as quiet cover while the monster patrols/reacts to noise.
 4. Touch the emergency hatch exit to complete the demo slice.
 
 ## Validation

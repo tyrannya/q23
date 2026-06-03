@@ -32,6 +32,87 @@ local function makeZone(parent: Instance, name: string, cframe: CFrame, size: Ve
 	return part
 end
 
+local function addPointLight(parent: BasePart, color: Color3, brightness: number, range: number)
+	local light = Instance.new("PointLight")
+	light.Color = color
+	light.Brightness = brightness
+	light.Range = range
+	light.Shadows = true
+	light.Parent = parent
+	return light
+end
+
+local function makeLabel(parent: Instance, name: string, text: string, cframe: CFrame)
+	local sign = makePart(parent, name, cframe, Vector3.new(5, 0.2, 1.4), Color3.fromRGB(12, 34, 34), Enum.Material.Neon)
+	local gui = Instance.new("SurfaceGui")
+	gui.Face = Enum.NormalId.Front
+	gui.LightInfluence = 0
+	gui.Parent = sign
+
+	local label = Instance.new("TextLabel")
+	label.BackgroundTransparency = 1
+	label.Size = UDim2.fromScale(1, 1)
+	label.Font = Enum.Font.Code
+	label.Text = text
+	label.TextColor3 = Color3.fromRGB(120, 255, 230)
+	label.TextScaled = true
+	label.Parent = gui
+	return sign
+end
+
+local function buildAirPocketLab(ship: Folder, metal: Color3, darkMetal: Color3, rust: Color3)
+	local glass = Color3.fromRGB(75, 145, 150)
+	local warning = Color3.fromRGB(195, 130, 45)
+
+	makeLabel(ship, "Room_A_Label_AtlasLab", "ATLAS BIO-LAB / AIR", CFrame.new(-19, 6.6, 3.45) * CFrame.Angles(0, math.rad(180), 0))
+
+	local tableA = makePart(ship, "Room_A_OverturnedLabTable_A", CFrame.new(-22, 1.2, -14) * CFrame.Angles(0, 0, math.rad(12)), Vector3.new(8, 1.4, 2.8), metal)
+	tableA:SetAttribute("GameplayNote", "Low obstacle: breaks sightlines and reinforces inverted-room dressing.")
+	makePart(ship, "Room_A_OverturnedLabTable_B", CFrame.new(-15, 1.2, -1) * CFrame.Angles(0, math.rad(18), math.rad(-10)), Vector3.new(7, 1.4, 2.5), metal)
+	makePart(ship, "Room_A_FallenShelf", CFrame.new(-29, 1.3, -2) * CFrame.Angles(0, math.rad(90), math.rad(8)), Vector3.new(9, 1, 2.2), rust, Enum.Material.CorrodedMetal)
+
+	for index = 1, 3 do
+		local z = -16 + (index - 1) * 6
+		local tank = makePart(ship, `Room_A_BrokenSpecimenTank_{index}`, CFrame.new(-29.6, 3.1, z), Vector3.new(1.2, 4.2, 2.2), glass, Enum.Material.Glass)
+		tank.Transparency = 0.35
+		makePart(ship, `Room_A_TankFrame_{index}`, CFrame.new(-29.6, 3.1, z), Vector3.new(1.35, 4.4, 2.4), rust, Enum.Material.CorrodedMetal).Transparency = 0.55
+	end
+
+	for index = 1, 4 do
+		local debris = makePart(ship, `Room_A_FloatingDebris_{index}`, CFrame.new(-26 + index * 2.5, 6.1 + (index % 2) * 0.35, -17 + index * 4), Vector3.new(2.2, 0.35, 0.6), warning, Enum.Material.WoodPlanks)
+		debris.CanCollide = false
+		debris.CFrame *= CFrame.Angles(math.rad(0), math.rad(index * 21), math.rad(index * 9))
+	end
+
+	local ventGlow = makePart(ship, "Room_A_AirVent_Glow", CFrame.new(-12.2, 5.4, -8), Vector3.new(0.4, 2.6, 5), Color3.fromRGB(95, 230, 220), Enum.Material.Neon)
+	ventGlow.Transparency = 0.2
+	addPointLight(ventGlow, Color3.fromRGB(90, 220, 215), 0.9, 16)
+end
+
+local function buildStealthBunkRoom(ship: Folder, metal: Color3, darkMetal: Color3, rust: Color3)
+	makeLabel(ship, "Room_B_Label_CrewDeck", "CREW BERTH / QUIET", CFrame.new(20, 6.6, 10.55))
+
+	local bunkPositions = {
+		Vector3.new(13.5, 1.4, 15),
+		Vector3.new(26.5, 1.4, 15),
+		Vector3.new(13.5, 1.4, 29),
+		Vector3.new(26.5, 1.4, 29),
+	}
+
+	for index, position in bunkPositions do
+		local bunk = makePart(ship, `Room_B_OverturnedBunk_{index}`, CFrame.new(position) * CFrame.Angles(0, math.rad(if index % 2 == 0 then -12 else 12), math.rad(8)), Vector3.new(6, 1.4, 2.2), metal)
+		bunk:SetAttribute("StealthCover", true)
+		makePart(ship, `Room_B_Mattress_{index}`, CFrame.new(position + Vector3.new(0, 0.8, 0)), Vector3.new(5.6, 0.45, 2), Color3.fromRGB(28, 45, 45), Enum.Material.Fabric)
+	end
+
+	makePart(ship, "Room_B_CentralNoiseTrap_Grate", CFrame.new(20, 0.58, 22), Vector3.new(7, 0.18, 7), Color3.fromRGB(80, 86, 78), Enum.Material.CorrodedMetal)
+	makePart(ship, "Room_B_CollapsedLocker_Left", CFrame.new(14, 2.2, 22) * CFrame.Angles(0, math.rad(28), math.rad(18)), Vector3.new(2.2, 4.2, 1.2), rust, Enum.Material.CorrodedMetal)
+	makePart(ship, "Room_B_CollapsedLocker_Right", CFrame.new(26, 2.2, 22) * CFrame.Angles(0, math.rad(-28), math.rad(-18)), Vector3.new(2.2, 4.2, 1.2), rust, Enum.Material.CorrodedMetal)
+
+	local flicker = makePart(ship, "Room_B_FlickerLight_Red", CFrame.new(20, 8.8, 22), Vector3.new(1.4, 0.35, 1.4), Color3.fromRGB(190, 30, 24), Enum.Material.Neon)
+	addPointLight(flicker, Color3.fromRGB(190, 35, 28), 0.65, 18)
+end
+
 local function buildCorridor(ship: Folder)
 	local metal = Color3.fromRGB(38, 54, 55)
 	local darkMetal = Color3.fromRGB(18, 28, 30)
@@ -79,6 +160,10 @@ local function buildCorridor(ship: Folder)
 	CollectionService:AddTag(airPocket, Config.CO2.AirPocketTag)
 	local glimmer = makePart(ship, "AirPocket_Surface_Glimmer", CFrame.new(-20, 6.4, -8), Vector3.new(19, 0.25, 19), Color3.fromRGB(120, 210, 220), Enum.Material.Neon)
 	glimmer.Transparency = 0.35
+	addPointLight(glimmer, Color3.fromRGB(105, 230, 225), 0.7, 22)
+
+	buildAirPocketLab(ship, metal, darkMetal, rust)
+	buildStealthBunkRoom(ship, metal, darkMetal, rust)
 end
 
 local function buildCheckpoints()
