@@ -12,8 +12,6 @@ local queryNoise = runtimeFolder:WaitForChild("QueryNoise") :: BindableFunction
 local monster = Workspace:WaitForChild(Config.Monster.ModelName) :: Model
 local humanoid = monster:WaitForChild("Humanoid") :: Humanoid
 local rootPart = monster:WaitForChild("HumanoidRootPart") :: BasePart
-local waypointFolder = Workspace:FindFirstChild(Config.Monster.WaypointFolderName)
-
 local state = "PATROL"
 local patrolIndex = 1
 local lastStimulusTime = 0
@@ -23,6 +21,7 @@ local lastPathTime = 0
 
 local function getWaypoints()
 	local waypoints = {}
+	local waypointFolder = Workspace:FindFirstChild(Config.Monster.WaypointFolderName)
 	if not waypointFolder then
 		return waypoints
 	end

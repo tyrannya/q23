@@ -33,10 +33,19 @@
     },
     "Lighting": {
       "$properties": {
-        "Ambient": [0, 0, 0],
-        "OutdoorAmbient": [4, 8, 10],
+        "Ambient": [
+          0,
+          0,
+          0
+        ],
+        "OutdoorAmbient": [
+          4,
+          8,
+          10
+        ],
         "Brightness": 0.7,
-        "ClockTime": 0
+        "ClockTime": 0,
+        "Technology": "Future"
       },
       "UnderwaterColorCorrection": {
         "$className": "ColorCorrectionEffect",
@@ -44,7 +53,11 @@
           "Brightness": -0.08,
           "Contrast": 0.18,
           "Saturation": -0.35,
-          "TintColor": [142, 196, 194]
+          "TintColor": [
+            142,
+            196,
+            194
+          ]
         }
       },
       "ColdAtmosphere": {
@@ -52,8 +65,16 @@
         "$properties": {
           "Density": 0.35,
           "Offset": 0.25,
-          "Color": [120, 170, 175],
-          "Decay": [20, 35, 40],
+          "Color": [
+            120,
+            170,
+            175
+          ],
+          "Decay": [
+            20,
+            35,
+            40
+          ],
           "Glare": 0,
           "Haze": 1.6
         }

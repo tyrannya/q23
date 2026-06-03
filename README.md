@@ -13,6 +13,8 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
 - Client breathing effects and watch UI.
 - Checkpoint respawn service.
 - Blind monster state machine driven by noise and proximity, not vision.
+- Runtime greybox builder that creates the demo corridor, two rooms, air pocket, maintenance niche, emergency hatch, checkpoints, patrol waypoints, spawn, and a placeholder monster if they do not already exist in Studio.
+- Objective flow and minimal objective UI so the demo has a start-to-finish path: find air, reach the niche, open the hatch.
 
 ## Rojo setup
 
@@ -25,16 +27,44 @@ Rojo/Luau scaffold for a 5–10 minute horror prototype of **INVERTED**: a first
    ```
 
 4. Connect the Studio plugin to the Rojo server.
+5. Press **Play**. `LevelBuilder.server.luau` will create a minimal playable greybox scene unless you already created your own `Workspace/Ship` or `Workspace/Monster`.
 
 ## Studio scene requirements
 
-Create these objects in Studio for the demo systems to activate:
+The generated scene is enough for a first playtest. If you replace it with hand-built content, keep these names/contracts:
 
-- `Workspace/Monster` model with `Humanoid` and `HumanoidRootPart`.
-- `Workspace/MonsterWaypoints` folder containing waypoint parts; optional `Order` attributes control patrol order.
-- `Workspace/Checkpoints` folder containing invisible checkpoint parts; optional `Order` attributes are available for designers.
-- Air pocket parts tagged with CollectionService tag `AirPocket` or with boolean attribute `IsAirPocket = true`.
+- `Workspace/Ship` contains the playable corridor/rooms.
+- `Workspace/Ship/EmergencyHatch_Exit` or another exit part has boolean attribute `IsDemoExit = true`.
+- `Workspace/Monster` model has `Humanoid` and `HumanoidRootPart`.
+- `Workspace/MonsterWaypoints` contains waypoint parts; optional `Order` attributes control patrol order.
+- `Workspace/Checkpoints` contains invisible checkpoint parts; optional `Order` attributes are available for designers.
+- Air pocket parts use CollectionService tag `AirPocket` or boolean attribute `IsAirPocket = true`.
 
 ## Recommended lighting
 
-The Rojo project config sets a dark baseline with a cold color correction and atmosphere. In Studio, use `Lighting.Technology = Future` for stronger shadows and flashlight mood.
+The Rojo project config and runtime builder set a dark baseline with cold color correction and atmosphere. Use `Lighting.Technology = Future` for stronger shadows and flashlight mood.
+
+## Controls
+
+- Move: default Roblox movement keys.
+- Slow walk: hold **Left Shift**.
+- Crouch: hold **C** or **Left Ctrl**.
+- Flashlight: press **F**.
+- Watch: hold **Left Alt**.
+
+## Current demo route
+
+1. Start in the inverted corridor.
+2. Reach `AirPocket_01` in Room A to vent CO₂.
+3. Move quietly toward the maintenance niche while the monster patrols/reacts to noise.
+4. Touch the emergency hatch exit to complete the demo slice.
+
+## Validation
+
+Run the lightweight repository checks before updating a PR or resolving merge conflicts:
+
+```bash
+python3 scripts/validate_project.py
+```
+
+This validates `default.project.json`, required Rojo paths, unresolved conflict markers, and basic Luau delimiter sanity.

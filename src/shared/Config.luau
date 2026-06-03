@@ -77,6 +77,19 @@ return {
 		RespawnSoundId = "rbxassetid://0",
 	},
 
+	Objective = {
+		ExitAttribute = "IsDemoExit",
+		AirPocketObjectiveDistance = 18,
+		NicheObjectiveDistance = 16,
+		CompleteFadeTime = 0.35,
+		Messages = {
+			FindAirPocket = "FIND AIR POCKET — CO2 rising",
+			ReachNiche = "REACH MAINTENANCE NICHE — stay quiet",
+			Escape = "OPEN EMERGENCY HATCH — end of demo",
+			Complete = "SIGNAL FOUND — DEMO COMPLETE",
+		},
+	},
+
 	Monster = {
 		ModelName = "Monster",
 		WaypointFolderName = "MonsterWaypoints",

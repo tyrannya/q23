@@ -29,12 +29,28 @@ local function registerCheckpoint(part: BasePart)
 	end)
 end
 
+local monitoredFolder: Instance? = nil
+
+local function monitorCheckpointFolder(folder: Instance)
+	if monitoredFolder == folder then
+		return
+	end
+
+	monitoredFolder = folder
+	folder.DescendantAdded:Connect(function(instance)
+		if instance:IsA("BasePart") and not checkpoints[instance] then
+			registerCheckpoint(instance)
+		end
+	end)
+end
+
 local function scanCheckpoints()
 	local folder = Workspace:FindFirstChild(Config.Checkpoint.FolderName)
 	if not folder then
 		return
 	end
 
+	monitorCheckpointFolder(folder)
 	for _, instance in folder:GetDescendants() do
 		if instance:IsA("BasePart") and not checkpoints[instance] then
 			registerCheckpoint(instance)
@@ -84,11 +100,20 @@ local function bindCharacter(player: Player, character: Model)
 	end)
 end
 
-Players.PlayerAdded:Connect(function(player)
+local function bindPlayer(player: Player)
 	player.CharacterAdded:Connect(function(character)
 		bindCharacter(player, character)
 	end)
-end)
+
+	if player.Character then
+		bindCharacter(player, player.Character)
+	end
+end
+
+Players.PlayerAdded:Connect(bindPlayer)
+for _, player in Players:GetPlayers() do
+	bindPlayer(player)
+end
 
 Players.PlayerRemoving:Connect(function(player)
 	lastCheckpointByPlayer[player] = nil
